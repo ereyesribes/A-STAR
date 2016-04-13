@@ -1,0 +1,28 @@
+{
+  "name": "A*",
+  "description": "An implementation of the A* algorythm using typescript",
+  "main": "A-STAR.ts",
+  "moduleType": [],
+  "keywords": [
+    "A*",
+    "AI",
+    "typescript"
+  ],
+  "authors": [
+    "Javier Reyes Ribes"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "qunit": "^1.22.0",
+    "lodash": "^3.10.0"
+  }
+}
