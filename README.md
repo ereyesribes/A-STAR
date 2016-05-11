@@ -40,6 +40,13 @@ var map2 = map.append({"x": x,"y": y,"connectedTo": [nodeIndex]});
 This will return a copy of "map" with a newly appended node
 Specially useful when most of your Map won't change but you need it to be somewhat flexible
 
+
+```
+var map2 = map.remove(nodeIndex);
+```
+This will return a copy of "map" without the node with the specified index
+
+
 ```
 map.dump();
 ```
@@ -49,3 +56,25 @@ This will return a JSON representation of "map", in the previously specified for
 
 Also, I left a publicly accessible ASTAR.distance(x1, y1, x2, y2)
 because you never know when it might be useful, it certainly has been to me!
+
+If you find any bugs or have any doubts or suggestions, please, don't hesitate to contact me (jreyesribes@gmail.com/cobretti124@gmail.com)
+
+
+## AMD and CommonJS
+
+You may be unfamiliar with TypeScript, this is why I'll briefly explain, to the best of my abilities (I'm not too eloquent) how to recompile the module for AMD or CommonJS:
+
+edit tsconfig.json, to make it look like so:
+```
+{"compilerOptions": {"module": "amd"}}
+```
+
+or
+
+```
+{"compilerOptions": {"module": "commonjs"}}
+```
+
+then get a TypeScript compiler (eg: tsc or atom's typescript module) and recompile.
+
+You should be good to go!

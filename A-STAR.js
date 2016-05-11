@@ -48,6 +48,25 @@ var ASTAR;
             }
             return clone;
         };
+        Map.prototype.remove = function (nodeI) {
+            var value, i, clone = new Map(_.cloneDeep(this.nodeArray));
+            _.pullAt(clone.nodeArray, nodeI);
+            for (var _i = 0, _a = clone.nodeArray; _i < _a.length; _i++) {
+                var n = _a[_i];
+                console.log(n.connectedTo);
+                _.remove(n.connectedTo, function (n) {
+                    return n === nodeI;
+                });
+                for (i in n.connectedTo) {
+                    value = n.connectedTo[i];
+                    if (value > nodeI) {
+                        n.connectedTo[i]--;
+                    }
+                }
+                console.log(n.connectedTo);
+            }
+            return clone;
+        };
         Map.prototype.dump = function () {
             return JSON.stringify(this.nodeArray);
         };

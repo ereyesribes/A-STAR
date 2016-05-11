@@ -110,6 +110,39 @@ module ASTAR {
       return clone;
     }
 
+    // Returns a disposable cloned Map where the specified node removed.
+    remove(nodeI: number): Map {
+      var value: number,
+        i: any, // for the sake of compliance with LoDash type specs
+        clone = new Map( _.cloneDeep(this.nodeArray));
+
+
+      // Pull the node from the nodeArray.
+      _.pullAt(clone.nodeArray, nodeI);
+
+      for (var n of clone.nodeArray) {
+        console.log(n.connectedTo);
+
+        // Remove the specified node from all other nodes' connections.
+        _.remove(n.connectedTo, function(n) {
+          return n === nodeI;
+        });
+
+        for (i in n.connectedTo) {
+          value = n.connectedTo[i];
+
+          if (value > nodeI) {
+            /* Because I am pulling from the array, everything
+              after the removed node will have NODEindex-- */
+            n.connectedTo[i]--;
+          }
+        }
+        console.log(n.connectedTo);
+      }
+
+      return clone;
+    }
+
     // Useful for debugging.
     dump(): string {
       return JSON.stringify(this.nodeArray);
