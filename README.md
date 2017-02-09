@@ -6,6 +6,10 @@ This is a graph-based implementation of the A* algorithm... made with TypeScript
 
 because I love TypeScript and I happen to be using it at the moment to make the game that made me develop this library in the first place
 
+The key difference with what I've seen so far when it comes to javascript A* is that
+unlike the traditional implementation, most are based on grids, so to speak, instead of graphs,
+so if you need a graph-based A* implementation, you are in luck!
+
 
 ## So how do I use it
 
@@ -57,24 +61,13 @@ This will return a JSON representation of "map", in the previously specified for
 Also, I left a publicly accessible ASTAR.distance(x1, y1, x2, y2)
 because you never know when it might be useful, it certainly has been to me!
 
-If you find any bugs or have any doubts or suggestions, please, don't hesitate to contact me (jreyesribes@gmail.com/cobretti124@gmail.com)
+## Reach me
 
+If you find this graph implementation of A* helpful, reach me! You could contribute, or tell me what
+you miss in this library!
 
-## AMD and CommonJS
+## Buy me a coffee
 
-You may be unfamiliar with TypeScript, this is why I'll briefly explain, to the best of my abilities (I'm not too eloquent) how to recompile the module for AMD or CommonJS:
+If you appreciate this library, please consider donating, it would be much appreciated!
 
-edit tsconfig.json, to make it look like so:
-```
-{"compilerOptions": {"module": "amd"}}
-```
-
-or
-
-```
-{"compilerOptions": {"module": "commonjs"}}
-```
-
-then get a TypeScript compiler (eg: tsc or atom's typescript module) and recompile.
-
-You should be good to go!
+<a href='https://pledgie.com/campaigns/33351'><img alt='Click here to lend your support to: A-STAR.ts and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/33351.png?skin_name=chrome' border='0' ></a>
